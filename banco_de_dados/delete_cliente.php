@@ -4,8 +4,6 @@ session_start();
 
     $id = mysqli_escape_string($connect, $_GET['id']);
 
-    echo $id;
-
     $sql = "DELETE FROM clientes WHERE id = '$id'";
 
     if(mysqli_query($connect, $sql)) {
