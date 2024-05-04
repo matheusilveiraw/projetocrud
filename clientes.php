@@ -37,7 +37,7 @@ include_once 'banco_de_dados/conexao_banco.php'
                                 <td><?php echo $dados['cpf'];?></td>
                                 <td><?php echo $dados['idade'];?></td>
                                 <td>
-                                    <a class="btn btn-warning btn-sm" href="clientes.php" role="button"><i data-feather="edit"></i></a>
+                                    <a class="btn btn-warning btn-sm" href="editar_cliente.php?id=<?php echo $dados['id']?>.php" role="button"><i data-feather="edit"></i></a>
                                 </td>
                                 <td>
                                     <a class="btn btn-danger btn-sm" href="clientes.php" role="button"><i data-feather="trash-2"></i></a>
