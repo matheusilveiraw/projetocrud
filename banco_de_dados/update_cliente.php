@@ -12,13 +12,11 @@ if(isset($_POST['btn-atualizar-cliente'])) {
 
     $sql = "UPDATE clientes SET nome = '$nome', sobrenome = '$sobrenome', cpf = '$cpf', idade = '$idade' WHERE id = '$id'";
 
-    echo 'chamou aqui';
-
     if(mysqli_query($connect, $sql)) {
-        $_SESSION['mensagem'] = "Cadastrado com sucesso!";
+        $_SESSION['mensagem'] = "Atualizado com sucesso!";
         header('Location: ../clientes.php?sucesso');
     } else { 
-        $_SESSION['mensagem'] = "Erro ao cadastrar!";
+        $_SESSION['mensagem'] = "Erro ao atualizar!";
         header('Location: ../clientes.php?erro');
     }
 }
