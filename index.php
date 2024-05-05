@@ -1,7 +1,8 @@
 <?php 
     include_once 'includes/header.php';
 ?>
-    <div class="grid text-center mt-5">
+
+<div class="grid text-center mt-5">
     <div class="col-12">
 
     <h1>Projeto CRUD</h1>
