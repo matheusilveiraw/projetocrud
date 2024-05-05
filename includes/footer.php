@@ -7,7 +7,7 @@
 
     <footer class="footer py-3 bg-dark text-light">
       <div class="container text-center">
-        <span class="text-muted">© 2024 Projeto CRUD. Todos os direitos reservados.</span>
+      <a class="btn btn-sm" href="https://github.com/matheusilveiraw"><i data-feather="github"></i></a> @matheusilveiraw | matheus.silveiraw@gmail.com
       </div>
     </footer>
 

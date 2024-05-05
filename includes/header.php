@@ -39,6 +39,9 @@
           <li class="nav-item">
             <a class="nav-link" href="produtos.php">Produtos</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="compras.php">Compras</a>
+          </li>
         </ul>
       </div>
     </div>
