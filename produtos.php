@@ -3,7 +3,7 @@ include_once 'includes/header.php';
 include_once 'banco_de_dados/conexao_banco.php'
 ?>
 
-<div class="container text-center flex-grow-1">
+<div class="container text-center flex-grow-1 mt-5">
     <div class="row">
         <div class="col"> </div>
         <div class="col-10"> 
@@ -57,10 +57,10 @@ include_once 'banco_de_dados/conexao_banco.php'
 
                 ?>
             </table>
-            <div class="container text-left">
-                <a class="btn btn-success btn-lg col-sm-3" href="cadastro_produto.php" role="button">Cadastrar</a>
+            <div class="container text-center">
+                <a class="btn btn-dark btn-lg col-sm-3 me-2" href="cadastro_produto.php" role="button">Cadastrar</a>
 
-                <a class="btn btn-warning btn-lg col-sm-3" href="index.php" role="button"">Menu</a>
+                <a class="btn btn-secondary btn-lg col-sm-3" href="index.php" role="button"">Menu</a>
             </div>
         </div>
         <div class="col"> </div>

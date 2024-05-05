@@ -8,14 +8,28 @@
         $idade = mysqli_escape_string($connect, $_POST['idade']);
         $cpf = mysqli_escape_string($connect, $_POST['cpf']);
 
-        $sql = "INSERT INTO clientes (nome, sobrenome, cpf, idade) VALUES ('$nome', '$sobrenome', '$cpf', '$idade')";
+        if (preg_match('/^(\d{3}\.\d{3}\.\d{3}-\d{2}|\d{11})$/', $cpf)) {
 
-        if(mysqli_query($connect, $sql)) {
-            $_SESSION['mensagem'] = "Cadastrado com sucesso!";
-            header('Location: ../clientes.php?sucesso');
-        } else { 
-            $_SESSION['mensagem'] = "Erro ao cadastrar!";
-            header('Location: ../clientes.php?erro');
+            if (preg_match('/^\d{11}$/', $cpf)) $cpf = substr($cpf, 0, 3) . '.' . substr($cpf, 3, 3) . '.' . substr($cpf, 6, 3) . '-' . substr($cpf, 9, 2);
+
+            $sql = "INSERT INTO clientes (nome, sobrenome, cpf, idade) VALUES ('$nome', '$sobrenome', '$cpf', '$idade')";
+
+            if(mysqli_query($connect, $sql)) {
+                $_SESSION['mensagem'] = "Cadastrado com sucesso!";
+                header('Location: ../clientes.php?sucesso');
+            } else { 
+                $_SESSION['mensagem'] = "Erro ao cadastrar!";
+                header('Location: ../clientes.php?erro');
+            }
+
+
+        } else {
+            echo "Formato do CPF inválido!";
+            // header('Location: ../clientes.php?erro');
         }
+
+
+
+
     }
 ?>
