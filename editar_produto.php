@@ -11,7 +11,7 @@
     }
 ?>
 
-<div class="container text-center">
+<div class="container text-center flex-grow-1">
     <div class="row">
         <div class="col"> </div>
         <div class="col-10">
