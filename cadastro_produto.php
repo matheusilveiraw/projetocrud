@@ -14,7 +14,7 @@ include_once 'banco_de_dados/conexao_banco.php'
                     <input type="text" name="nome" class="form-control" id="nome" placeholder="Nome">
                 </div>
                 <div class="col-sm-10 mt-1">
-                    <input type="text" name="tipo" class="form-control" id="tipo" placeholder="tipo">
+                    <input type="text" name="tipo" class="form-control" id="tipo" placeholder="Tipo">
                 </div>
 
                 <div class="container text-left mt-1">

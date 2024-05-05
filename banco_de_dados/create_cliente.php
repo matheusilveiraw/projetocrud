@@ -24,8 +24,8 @@
 
 
         } else {
-            echo "Formato do CPF inválido!";
-            // header('Location: ../clientes.php?erro');
+            $_SESSION['mensagem'] = "Formato do CPF inválido!";
+            header('Location: ../clientes.php?erro');
         }
 
 
