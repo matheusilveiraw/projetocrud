@@ -21,15 +21,9 @@
                 $_SESSION['mensagem'] = "Erro ao cadastrar!";
                 header('Location: ../clientes.php?erro');
             }
-
-
         } else {
             $_SESSION['mensagem'] = "Formato do CPF inválido!";
             header('Location: ../clientes.php?erro');
         }
-
-
-
-
     }
 ?>
