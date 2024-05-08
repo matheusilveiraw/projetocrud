@@ -1,6 +1,6 @@
 <?php
-include_once 'includes/header.php';
-include_once 'banco_de_dados/conexao_banco.php'
+    include_once 'includes/header.php';
+    include_once 'banco_de_dados/conexao_banco.php';
 ?>
 
 <div class="container flex-grow-1">
@@ -15,7 +15,7 @@ include_once 'banco_de_dados/conexao_banco.php'
                     <input type="text" name="sobrenome" class="form-control" id="sobrenome" placeholder="Sobrenome" required>
                 </div>
                 <div class="mt-1"> 
-                    <input type="text" name="idade" class="form-control" id="Idade" placeholder="Idade" required>
+                    <input type="number" min="0" max="200" name="idade" class="form-control" id="Idade" placeholder="Idade" required>
                 </div>
                 <div class="mt-1"> 
                     <input type="text" name="cpf" class="form-control" id="cpf" placeholder="CPF" required>

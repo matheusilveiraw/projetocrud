@@ -1,6 +1,6 @@
 <?php
-include_once 'includes/header.php';
-include_once 'banco_de_dados/conexao_banco.php'
+    include_once 'includes/header.php';
+    include_once 'banco_de_dados/conexao_banco.php';
 ?>
 
 <div class="container flex-grow-1">
