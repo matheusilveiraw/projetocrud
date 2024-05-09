@@ -1,0 +1,13 @@
+.small-warning {
+    color: red;
+    font-size: 10px; 
+    margin-left: 5px;
+}
+
+body {
+    background-color: lightgray;
+    color: #343a40;
+  }
+  .navbar .footer {
+    border-bottom: 5px solid #343a40;
+  }

@@ -14,20 +14,20 @@ if (isset($_POST['btn-cadastrar-cliente'])) {
 
         $sql = "INSERT INTO clientes (nome, sobrenome, cpf, idade) VALUES ('$nome', '$sobrenome', '$cpf', '$idade')";
 
-        // if(mysqli_query($connect, $sql)) {
-        //     $_SESSION['mensagem'] = "Cadastrado com sucesso!";
-        //     // header('Location: ../clientes.php?sucesso');
-        // } else { 
-        //     $_SESSION['mensagem'] = "Erro ao cadastrar!";
-        //     // header('Location: ../clientes.php?erro');
-        // }
+        if(mysqli_query($connect, $sql)) {
+            $_SESSION['mensagem'] = "Cadastrado com sucesso!";
+            // header('Location: ../clientes.php?sucesso');
+        } else { 
+            $_SESSION['mensagem'] = "Erro ao cadastrar!";
+            // header('Location: ../clientes.php?erro');
+        }
     } else {
         $url = "cadastro_cliente.php";
         $url .= "?nome=" . urlencode($nome);
         $url .= "&sobrenome=" . urlencode($sobrenome);
         $url .= "&idade=" . urlencode($idade);
         $url .= "&cpf=" . urlencode($cpf);
-
+        $url .= "&msgcpf=Formatos admitidos no CPF: 00000000000 ou 000.000.000-00 ";
         header('Location: ../'.$url);
     }
 }
