@@ -2,14 +2,14 @@
 include_once 'includes/header.php';
 include_once 'banco_de_dados/conexao_banco.php';
 
-if (isset($_GET['sucesso'])) {
+if (isset($_GET['sucessoCadastro'])) {
 ?>
     <div class="alert alert-success" role="alert">
         Cadastro efetuado com sucesso!
     </div>
 <?php
 }
-if (isset($_GET['erro'])) {
+if (isset($_GET['erroCadastro'])) {
 ?>
     <div class="alert alert-danger" role="alert">
         Houve algum erro no cadastro!

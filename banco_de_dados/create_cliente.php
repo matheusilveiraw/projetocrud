@@ -27,7 +27,7 @@ if (isset($_POST['btn-cadastrar-cliente'])) {
     }
 
     if(isset($errosNome) || isset($errosSobrenome) || isset($errosCpf)) {
-        $url = "cadastro_cliente.php?";
+        $url = "cadastro_cliente.php?erro&";
         $url .= "nome=" . urlencode($nome);
         $url .= "&sobrenome=" . urlencode($sobrenome);
         $url .= "&idade=" . urlencode($idade);
@@ -39,10 +39,10 @@ if (isset($_POST['btn-cadastrar-cliente'])) {
     } else { 
         if(mysqli_query($connect, $sql)) {
             $_SESSION['mensagem'] = "Cadastrado com sucesso!";
-            header('Location: ../clientes.php?sucesso');
+            header('Location: ../clientes.php?sucessoCadastro');
         } else { 
             $_SESSION['mensagem'] = "Erro ao cadastrar!";
-            header('Location: ../clientes.php?erro');
+            header('Location: ../clientes.php?erroCadastro');
         }
     }
 }
