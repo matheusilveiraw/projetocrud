@@ -16,6 +16,35 @@ if (isset($_GET['erroCadastro'])) {
     </div>
 <?php
 }
+if (isset($_GET['sucessoDelete'])) {
+?>
+    <div class="alert alert-success" role="alert">
+        Cadastro deletado com sucesso!
+    </div>
+<?php
+}
+if (isset($_GET['erroDelete'])) {
+?>
+    <div class="alert alert-danger" role="alert">
+        Erro ao deletar!
+    </div>
+<?php
+}
+
+if (isset($_GET['sucessoUpdate'])) {
+?>
+    <div class="alert alert-success" role="alert">
+        Cadastro atualizado com sucesso!
+    </div>
+<?php
+}
+if (isset($_GET['erroUpdate'])) {
+?>
+    <div class="alert alert-danger" role="alert">
+        Erro ao atualizar!
+    </div>
+<?php
+}
 ?>
 <div class="container text-center flex-grow-1 mt-5">
     <div class="row">

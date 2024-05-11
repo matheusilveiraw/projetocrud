@@ -8,9 +8,9 @@ session_start();
 
     if(mysqli_query($connect, $sql)) {
         $_SESSION['mensagem'] = "Deletado com sucesso!";
-        header('Location: ../clientes.php?sucesso');
+        header('Location: ../clientes.php?sucessoDelete');
     } else { 
         $_SESSION['mensagem'] = "Erro ao deletar!";
-        header('Location: ../clientes.php?erro');
+        header('Location: ../clientes.php?erroDelete');
     }
 ?>

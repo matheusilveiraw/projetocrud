@@ -19,9 +19,6 @@ if (isset($_POST['btn-cadastrar-cliente'])) {
     if (preg_match('/^(\d{3}\.\d{3}\.\d{3}-\d{2}|\d{11})$/', $cpf)) {
 
         if (preg_match('/^\d{11}$/', $cpf)) $cpf = substr($cpf, 0, 3) . '.' . substr($cpf, 3, 3) . '.' . substr($cpf, 6, 3) . '-' . substr($cpf, 9, 2);
-
-        $sql = "INSERT INTO clientes (nome, sobrenome, cpf, idade) VALUES ('$nome', '$sobrenome', '$cpf', '$idade')";
-
     } else { 
         $errosCpf = "Formatos admitidos no CPF: 00000000000 ou 000.000.000-00";
     }
@@ -37,6 +34,7 @@ if (isset($_POST['btn-cadastrar-cliente'])) {
         if(isset($errosCpf)) $url .= "&errosCpf=" . urlencode($errosCpf);
         header('Location: ../'.$url);
     } else { 
+        $sql = "INSERT INTO clientes (nome, sobrenome, cpf, idade) VALUES ('$nome', '$sobrenome', '$cpf', '$idade')";
         if(mysqli_query($connect, $sql)) {
             $_SESSION['mensagem'] = "Cadastrado com sucesso!";
             header('Location: ../clientes.php?sucessoCadastro');
