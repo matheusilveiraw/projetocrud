@@ -1,7 +1,6 @@
 <?php
 include_once 'includes/header.php';
 include_once 'banco_de_dados/conexao_banco.php';
-include_once 'includes/mensagem.php';
 
 if (isset($_GET['sucesso'])) {
 ?>
@@ -17,8 +16,6 @@ if (isset($_GET['erro'])) {
     </div>
 <?php
 }
-
-
 ?>
 <div class="container text-center flex-grow-1 mt-5">
     <div class="row">
