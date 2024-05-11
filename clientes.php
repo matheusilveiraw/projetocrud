@@ -1,12 +1,29 @@
 <?php
 include_once 'includes/header.php';
-include_once 'banco_de_dados/conexao_banco.php'
-?>
+include_once 'banco_de_dados/conexao_banco.php';
+include_once 'includes/mensagem.php';
 
+if (isset($_GET['sucesso'])) {
+?>
+    <div class="alert alert-success" role="alert">
+        Cadastro efetuado com sucesso!
+    </div>
+<?php
+}
+if (isset($_GET['erro'])) {
+?>
+    <div class="alert alert-danger" role="alert">
+        Houve algum erro no cadastro!
+    </div>
+<?php
+}
+
+
+?>
 <div class="container text-center flex-grow-1 mt-5">
     <div class="row">
         <div class="col"> </div>
-        <div class="col-10"> 
+        <div class="col-10">
             <h1>Clientes</h1>
             <table class="table">
                 <thead>
@@ -31,16 +48,16 @@ include_once 'banco_de_dados/conexao_banco.php'
                 ?>
                         <tbody>
                             <tr>
-                                <th scope="row"><?php echo $dados['id'];?></th>
-                                <td><?php echo $dados['nome'];?></td>
-                                <td><?php echo $dados['sobrenome'];?></td>
-                                <td><?php echo $dados['cpf'];?></td>
-                                <td><?php echo $dados['idade'];?></td>
+                                <th scope="row"><?php echo $dados['id']; ?></th>
+                                <td><?php echo $dados['nome']; ?></td>
+                                <td><?php echo $dados['sobrenome']; ?></td>
+                                <td><?php echo $dados['cpf']; ?></td>
+                                <td><?php echo $dados['idade']; ?></td>
                                 <td>
-                                    <a class="btn btn-warning btn-sm" href="editar_cliente.php?id=<?php echo $dados['id']?>.php" role="button"><i data-feather="edit"></i></a>
+                                    <a class="btn btn-warning btn-sm" href="editar_cliente.php?id=<?php echo $dados['id'] ?>.php" role="button"><i data-feather="edit"></i></a>
                                 </td>
                                 <td>
-                                    <a class="btn btn-danger btn-sm" href="banco_de_dados/delete_cliente.php?id=<?php echo $dados['id']?>" role="button"><i data-feather="trash-2"></i></a>
+                                    <a class="btn btn-danger btn-sm" href="banco_de_dados/delete_cliente.php?id=<?php echo $dados['id'] ?>" role="button"><i data-feather="trash-2"></i></a>
                                 </td>
                             </tr>
                         </tbody>
@@ -70,9 +87,10 @@ include_once 'banco_de_dados/conexao_banco.php'
                 <a class="btn btn-secondary btn-lg col-sm-3" href="index.php" role="button"">Menu</a>
             </div>
         </div>
-        <div class="col"> </div>
+        <div class=" col">
+            </div>
+        </div>
     </div>
-</div>
-<?php
-include_once 'includes/footer.php';
-?>
+    <?php
+    include_once 'includes/footer.php';
+    ?>
