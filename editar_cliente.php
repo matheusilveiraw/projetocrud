@@ -8,26 +8,60 @@ if (isset($_GET['id'])) {
     $sql = "SELECT * FROM clientes where id = '$id'";
     $resultado = mysqli_query($connect, $sql);
     $dados = mysqli_fetch_array($resultado);
+
+    print_r($_GET);
 }
 ?>
-<div class="container text-center flex-grow-1">
+<div class="container flex-grow-1">
     <div class="row justify-content-center">
         <div class="col-10">
             <h1 class="text-center mt-5">Atualizar Clientes</h1>
             <form class="form-horizontal" action="banco_de_dados/update_cliente.php" method="POST">
                 <div class="mt-1">
-                    <input type="text" name="nome" class="form-control" id="nome" placeholder="Nome" value="<?php echo $dados['nome'] ?>">
+                    <input type="text" name="nome" class="form-control" id="nome" placeholder="Nome" value="<?php 
+                    if(isset($_GET['nome'])) {
+                         echo $_GET['nome'];
+                    } else { 
+                        echo $dados['nome']; } 
+                    ?>">
+
+                    <?php if (isset($_GET['errosNome'])) { ?>
+                        <span class="small-warning">
+                            <?php if (isset($_GET['errosNome'])) echo '*' . $_GET['errosNome'] ?>
+                        </span>
+                    <?php } ?>
                 </div>
                 <div class="mt-1">
-                    <input type="text" name="sobrenome" class="form-control" id="sobrenome" placeholder="Sobrenome" value="<?php echo $dados['sobrenome'] ?>">
+                    <input type="text" name="sobrenome" class="form-control" id="sobrenome" placeholder="Sobrenome" value="<?php 
+                        if(isset($_GET['sobrenome'])) { 
+                                echo $_GET['sobrenome'];
+                            } else { 
+                                echo $dados['sobrenome']; 
+                            }  ?>">
+                    <?php if (isset($_GET['errosSobrenome'])) { ?>
+                        <span class="small-warning">
+                            <?php if (isset($_GET['errosSobrenome'])) echo '*' . $_GET['errosSobrenome'] ?>
+                        </span>
+                    <?php } ?>
                 </div>
 
                 <div class="mt-1">
-                    <input type="text" name="idade" class="form-control" id="Idade" placeholder="Idade" value="<?php echo $dados['idade'] ?>">
+                    <input type="number" min="0" max="200" name="idade" class="form-control" id="Idade" placeholder="Idade" value="<?php echo $dados['idade'] ?>">
                 </div>
 
                 <div class="mt-1">
-                    <input type="text" name="cpf" class="form-control" id="cpf" placeholder="CPF" value="<?php echo $dados['cpf'] ?>">
+                    <input type="text" name="cpf" class="form-control" id="cpf" placeholder="CPF" value="<?php 
+                        if(isset($_GET['cpf'])) { 
+                            echo $_GET['cpf'];
+                        } else { 
+                            echo $dados['cpf'];
+                        }
+                    ?>">
+                    <?php if (isset($_GET['errosCpf'])) { ?>
+                        <span class="small-warning">
+                            <?php if (isset($_GET['errosCpf'])) echo '*' . $_GET['errosCpf'] ?>
+                        </span>
+                    <?php } ?>
                 </div>
 
 

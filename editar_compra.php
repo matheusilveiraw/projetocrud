@@ -1,6 +1,19 @@
 <?php
     include_once 'includes/header.php';
     include_once 'banco_de_dados/conexao_banco.php';
+
+echo $_GET['id'];
+
+    if (isset($_GET['id'])) {
+        echo 'entrou';
+        $id = mysqli_escape_string($connect, $_GET['id']);
+    
+        $sql = "SELECT * FROM clientes where id = '$id'";
+        $resultado = mysqli_query($connect, $sql);
+        $dados = mysqli_fetch_array($resultado);
+        echo($dados);
+    }
+
 ?>
 
 <div class="container flex-grow-1">
@@ -11,7 +24,6 @@
 
                 <div class="mt-1">
                     <select class="container form-select" aria-label=".form-select-lg example" required name="cliente" id="cliente">
-                        <option disabled selected value="">Selecione um cliente</option>
 
                         <?php
                         $sql = "SELECT * FROM clientes";
@@ -22,22 +34,12 @@
                         ?>
                                 <option value=<?php echo $dados['id'] ?>> <?php echo $dados['nome'] ?></option>
                             <?php }
-
-                            ?>
-
-                        <?php
-                        } else {
-                        ?>
-                            <option disabled value="">Nenhum cliente registrado</option>
-                        <?php
                         }
-                        ?>
+                            ?>
                     </select>
                 </div>
                 <div class="mt-1">
                     <select class="container form-select" aria-label=".form-select-lg example" required name="produto" id="produto">
-                        <option disabled selected value="">Selecione um cliente</option>
-
                         <?php
                         $sql = "SELECT * FROM produtos";
                         $resultado = mysqli_query($connect, $sql);
@@ -47,16 +49,8 @@
                         ?>
                                 <option value=<?php echo $dados['id'] ?>> <?php echo $dados['nome'] ?></option>
                             <?php }
-
-                            ?>
-
-                        <?php
-                        } else {
-                        ?>
-                            <option disabled value="">Nenhum produto registrado</option>
-                        <?php
                         }
-                        ?>
+                            ?>
                     </select>
                 </div>
                 <div class="mt-1">

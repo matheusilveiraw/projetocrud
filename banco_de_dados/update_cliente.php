@@ -23,10 +23,10 @@
             $errosCpf = "Formatos admitidos no CPF: 00000000000 ou 000.000.000-00";
         }
 
-
         if (isset($errosNome) || isset($errosSobrenome) || isset($errosCpf)) {
-            $url = "cadastro_cliente.php?erro&";
-            $url .= "nome=" . urlencode($nome);
+            $url = "editar_cliente.php?erro&";
+            $url .= "id=" . urlencode($id);
+            $url .= "&nome=" . urlencode($nome);
             $url .= "&sobrenome=" . urlencode($sobrenome);
             $url .= "&idade=" . urlencode($idade);
             $url .= "&cpf=" . urlencode($cpf);

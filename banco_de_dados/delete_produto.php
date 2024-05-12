@@ -8,10 +8,10 @@
 
     if (mysqli_query($connect, $sql)) {
         $_SESSION['mensagem'] = "Deletado com sucesso!";
-        header('Location: ../produtos.php?sucesso');
+        header('Location: ../produtos.php?sucessoDelete');
     } else {
         $_SESSION['mensagem'] = "Erro ao deletar produto!";
-        header('Location: ../produtos.php?erro');
+        header('Location: ../produtos.php?erroDelete');
     }
 ?>
 

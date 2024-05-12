@@ -12,10 +12,10 @@ if(isset($_POST['btn-atualizar-produto'])) {
 
     if(mysqli_query($connect, $sql)) {
         $_SESSION['mensagem'] = "Atualizado com sucesso!";
-        header('Location: ../produtos.php?sucesso');
+        header('Location: ../produtos.php?sucessoUpdate');
     } else { 
         $_SESSION['mensagem'] = "Erro ao atualizar!";
-        header('Location: ../produtos.php?erro');
+        header('Location: ../produtos.php?erroUpdate');
     }
 }
 ?>
