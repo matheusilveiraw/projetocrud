@@ -10,10 +10,10 @@
 
         if(mysqli_query($connect, $sql)) {
             $_SESSION['mensagem'] = "Cadastrado com sucesso!";
-            header('Location: ../produtos.php?sucesso');
+            header('Location: ../produtos.php?sucessoCadastro');
         } else { 
             $_SESSION['mensagem'] = "Erro ao cadastrar!";
-            header('Location: ../produtos.php?erro');
+            header('Location: ../produtos.php?erroCadastro');
         }
     }
 ?>

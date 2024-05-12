@@ -1,6 +1,51 @@
 <?php
 include_once 'includes/header.php';
-include_once 'banco_de_dados/conexao_banco.php'
+include_once 'banco_de_dados/conexao_banco.php';
+
+if (isset($_GET['sucessoDelete'])) {
+    ?>
+        <div class="alert alert-success" role="alert">
+            Cadastro deletado com sucesso!
+        </div>
+    <?php
+    }
+    if (isset($_GET['erroDelete'])) {
+    ?>
+        <div class="alert alert-danger" role="alert">
+            Houve algum erro ao deletar! Consulte-nos!
+        </div>
+    <?php
+    }
+
+    if (isset($_GET['sucessoCadastro'])) {
+        ?>
+            <div class="alert alert-success" role="alert">
+                Cadastro deletado com sucesso!
+            </div>
+        <?php
+        }
+        if (isset($_GET['erroCadastro'])) {
+        ?>
+            <div class="alert alert-danger" role="alert">
+                Houve algum erro ao deletar! Consulte-nos!
+            </div>
+        <?php
+        }
+
+        if (isset($_GET['sucessoUpdate'])) {
+            ?>
+                <div class="alert alert-success" role="alert">
+                    Cadastro editado com sucesso!
+                </div>
+            <?php
+            }
+            if (isset($_GET['erroUpdate'])) {
+            ?>
+                <div class="alert alert-danger" role="alert">
+                    Houve algum erro ao editar! Consulte-nos!
+                </div>
+            <?php
+            }
 ?>
 
 <div class="container text-center flex-grow-1 mt-5">
