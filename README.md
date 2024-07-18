@@ -1,0 +1,1 @@
+Projeto que decidi fazer após estudar o básico de PHP pela Node Studios Treinamentos, é um sistema simples de compras pelo lado do administrador para praticar o CRUD, temos o cadastro de clientes e produtos que após serem cadastrados permite ser cadastrado as compras. Nesse projeto utilizei PHP, Boostrap, SQL, JavaScript, HTML e CSS. 
